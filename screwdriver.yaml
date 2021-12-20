@@ -1,0 +1,16 @@
+shared:
+  image: node:14
+jobs:
+  main:
+    requires: [ ~commit ]
+    steps:
+      - test: echo "test"
+  success:
+    requires: [ main ]
+    steps:
+      - test: echo "test"
+  failure:
+    requires: [ main ]
+    steps:
+      - sleep 10
+      - test: exit 1
