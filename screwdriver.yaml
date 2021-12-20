@@ -8,9 +8,9 @@ jobs:
   success:
     requires: [ main ]
     steps:
+      - sleep 10
       - test: echo "test"
   failure:
     requires: [ main ]
     steps:
-      - sleep 10
       - test: exit 1
